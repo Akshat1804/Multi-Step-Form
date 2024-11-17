@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/remixicon@2.5.0/dist/css/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    
+    <main>
+        <video src="855645-hd_1920_1080_24fps.mp4" autoplay loop muted></video>
+      <nav> 
+          <div class="brand">
+            <h1>EventEase</h1>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#register">Register</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+      </nav>
+      <div class="box"> 
+    <div class="booking-form  mx-auto p-4 rounded-md shadow-md">
+        <form id="register-form" action="/register" method="post">
+            <div class="form-group" id="step-1">
+                <label for="name" class="block text-sm font-medium text-white">Name:</label>
+                <input type="text" id="name" name="name" required class="block w-full p-2 mt-1 text-sm text-gray-700 bg-white border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                <button type="button" id="next-btn-1" class="inline-block px-4 py-2 mt-6 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-blue-500 focus:border-blue-500">NEXT</button>
+            </div>
+            <div class="form-group" id="step-2" style="display: none;">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
+                <input type="email" id="email" name="email" required class="block w-full p-2 mt-1 text-sm text-gray-700 bg-white border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                <button type="button" id="prev-btn-2" class="inline-block px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-gray-500 focus:border-gray-500">PREVIOUS</button>
+                <button type="button" id="next-btn-2" class="inline-block px-4 py-2 mt-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-blue-500 focus:border-blue-500">NEXT</button>
+            </div>
+            <div class="form-group" id="step-3" style="display: none;">
+                <label for="phone" class="block text-sm font-medium text-gray-700">Phone:</label>
+                <input type="tel" id="phone" name="phone" required class="block w-full p-2 mt-1 text-sm text-gray-700 bg-white border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                <button type="button" id="prev-btn-3" class="inline-block px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-gray-500 focus:border-gray-500">PREVIOUS</button>
+                <button type="button" id="next-btn-3" class="inline-block px-4 py-2 mt-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-blue-500 focus:border-blue-500">NEXT</button>
+            </div>
+            <div class="form-group" id="step-4" style="display: none;">
+                <label for="event" class="block text-sm font-medium text-gray-700">Select Event:</label>
+                <select id="event" name="event" required class="block w-full p-2 mt-1 text-sm text-gray-700 bg-white border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                    <option value="">Select an event</option>
+                    <option value="event1">CONCERT</option>
+                    <option value="event2">STANDUP</option>
+                    <option value="event3">WEDDING</option>
+                </select>
+                <button type="button" id="prev-btn-4" class="inline-block px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-gray-500 focus:border-gray-500">PREVIOUS</button>
+                <button type="button" id="next-btn-4" class="inline-block px-4 py-2 mt-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-blue-500 focus:border-blue-500">NEXT</button>
+            </div>
+            <div class="form-group" id="step-5" style="display: none;">
+                <label for="date" class="block text-sm font-medium text-gray-700">Date:</label>
+                <input type="date" id="date" name="date" required class="block w-full p-2 mt-1 text-sm text-gray-700 bg-white border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+                <button type="button" id="prev-btn-5" class="inline-block px-4 py-2 mt-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-gray-500 focus:border-gray-500">PREVIOUS</button>
+                <input type="submit" id="register-btn" value="REGISTER" class="inline-block px-4 py-2 mt-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('register-form');
+        const nextBtn1 = document.getElementById('next-btn-1');
+        const nextBtn2 = document.getElementById('next-btn-2');
+        const nextBtn3 = document.getElementById('next-btn-3');
+        const nextBtn4 = document.getElementById('next-btn-4');
+        const prevBtn2 = document.getElementById('prev-btn-2');
+        const prevBtn3 = document.getElementById('prev-btn-3');
+        const prevBtn4 = document.getElementById('prev-btn-4');
+        const prevBtn5 = document.getElementById('prev-btn-5');
+        const registerBtn = document.getElementById('register-btn');
+
+        nextBtn1.addEventListener('click', () => {
+            document.getElementById('step-1').style.display = 'none';
+            document.getElementById('step-2').style.display = 'block';
+        });
+
+        nextBtn2.addEventListener('click', () => {
+            document.getElementById('step-2').style.display = 'none';
+            document.getElementById('step-3').style.display = 'block';
+        });
+
+        nextBtn3.addEventListener('click', () => {
+            document.getElementById('step-3').style.display = 'none';
+            document.getElementById('step-4').style.display = 'block';
+        });
+
+        nextBtn4.addEventListener('click', () => {
+            document.getElementById('step-4').style.display = 'none';
+            document.getElementById('step-5').style.display = 'block';
+        });
+
+        prevBtn2.addEventListener('click', () => {
+            document.getElementById('step-2').style.display = 'none';
+            document.getElementById('step-1').style.display = 'block';
+        });
+
+        prevBtn3.addEventListener('click', () => {
+            document.getElementById('step-3').style.display = 'none';
+            document.getElementById('step-2').style.display = 'block';
+        });
+
+        prevBtn4.addEventListener('click', () => {
+            document.getElementById('step-4').style.display = 'none';
+            document.getElementById('step-3').style.display = 'block';
+        });
+
+        prevBtn5.addEventListener('click', () => {
+            document.getElementById('step-5').style.display = 'none';
+            document.getElementById('step-4').style.display = 'block';
+        });
+
+        registerBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const event = document.getElementById('event').value;
+            const date = document.getElementById('date').value;
+
+            console.log(`Name: ${name}`);
+            console.log(`Email: ${email}`);
+            console.log(`Phone: ${phone}`);
+            console.log(`Event: ${event}`);
+            console.log(`Date: ${date}`);
+
+            alert('Registration completed!');
+        });
+    </script>
+    </div>
+    </main>
+</body>
+</html>
